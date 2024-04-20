@@ -8,10 +8,13 @@
 import SwiftUI
 
 struct BarcodeScannerView: View {
+    
+    @State private var scannedCode: String = ""
+    
     var body: some View {
         NavigationView{
             VStack{
-                Rectangle()
+                ScannerView(scannedCode: $scannedCode)
                     .frame(maxWidth: /*@START_MENU_TOKEN@*/.infinity/*@END_MENU_TOKEN@*/, maxHeight: 300)
                 
                 Spacer().frame(height: 60)
@@ -19,10 +22,12 @@ struct BarcodeScannerView: View {
                 Label("Scanned Barcode", systemImage: "barcode.viewfinder")
                 
                 
-                Text("Not yet Scanned")
+                Text(
+                    scannedCode.isEmpty ? "Not yet Scanned"
+                    : scannedCode)
                     .bold()
                     .font(.largeTitle)
-                    .foregroundColor(.green)
+                    .foregroundColor(scannedCode.isEmpty ? .red : .green)
             } .navigationTitle("Barcode Scanner")
             
         }

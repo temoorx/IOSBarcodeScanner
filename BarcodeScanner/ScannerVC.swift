@@ -107,6 +107,7 @@ extension ScannerVC: AVCaptureMetadataOutputObjectsDelegate{
             scannerDelegate?.didSurface(error: .invalidScannedValue)
             return
         }
+    
         scannerDelegate?.didFind(barcode: barcode)
     }
     
