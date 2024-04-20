@@ -17,6 +17,6 @@ struct AlertItem : Identifiable{
 struct AlertContext{
     static let invalidDeviceinput = AlertItem(title: "Invalid Device Input", message: "Something is wrong with camera. We are unable to capture the input", dismissButton: .default(Text("Ok")))
     
-    static let invalidScannedType = AlertItem(title: "Invalid Scanned Input", message: "The value scanned is not valid. This app scans EAN-8 adn EAN-13", dismissButton: .default(Text("Ok")))
+    static let invalidScannedType = AlertItem(title: "Invalid Scanned Input", message: "The value scanned is not valid. This app scans EAN-8 and EAN-13", dismissButton: .default(Text("Ok")))
 
 }
